@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const menuRoute = require('./routes/menuRoute');
 
 const app = express();
 
@@ -14,10 +15,6 @@ app.enable('trust proxy');
 
 app.options('*', cors());
 
-app.use('/', (req, res, next) => {
-  res.status(200).json({
-    message: ' Hello world',
-  });
-});
+app.use('/api', menuRoute);
 
 module.exports = app;
