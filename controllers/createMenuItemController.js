@@ -2,7 +2,7 @@ const { MenuModel } = require('../models/menuModel');
 
 exports.createMenuItem = async (req, res, next) => {
   try {
-    await MenuModel.create({ ...req.body });
+    await MenuModel.create({ ...req.body, image: req.body.image || null });
 
     res.status(201).json({
       status: 'success',
