@@ -12,6 +12,10 @@ const OrderSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
   },
+  deliveryStatus: {
+    type: String,
+    default: 'Pending'
+  }
 });
 
 const OrderModel = mongoose.model('order', OrderSchema);
