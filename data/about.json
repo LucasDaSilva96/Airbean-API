@@ -1,0 +1,30 @@
+{
+  "company": {
+    "name": "Airbean",
+    "description": "Airbean är en innovativ kaffeleveranstjänst som använder drönare för att leverera färskt kaffe direkt till din dörr.",
+    "services": {
+      "coffeeDelivery": "Vi erbjuder ett brett utbud av högkvalitativt kaffe, från klassiska bryggkaffen till specialkaffen, levererade snabbt och effektivt via drönare.",
+      "subscription": "Prenumerera på våra kaffeleveranser och få din favoritkaffe regelbundet utan att behöva tänka på att beställa."
+    },
+    "delivery": {
+      "method": "Drönare",
+      "speed": "Snabb leverans inom 30 minuter",
+      "coverage": "Levererar till hela staden och förorter"
+    },
+    "uniqueSellingPoints": [
+      "Snabb och pålitlig leverans via drönare",
+      "Högkvalitativt kaffe från utvalda rosterier",
+      "Miljövänligt leveransalternativ"
+    ],
+    "customerBenefits": [
+      "Bekvämlighet: Beställ kaffe med några få klick och få det levererat direkt till dig.",
+      "Kvalitet: Njut av premiumkaffe från noga utvalda bönor.",
+      "Innovation: Upplev framtidens leverans med vår drönartjänst."
+    ],
+    "whyShopWithUs": [
+      "Vår snabba och pålitliga drönarleverans garanterar att ditt kaffe alltid är varmt och färskt.",
+      "Vi erbjuder ett brett utbud av kaffetyper och smaker för att passa alla preferenser.",
+      "Vår tjänst är utformad för att vara så miljövänlig som möjligt, med nollutsläpp från våra drönare."
+    ]
+  }
+}
