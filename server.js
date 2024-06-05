@@ -1,10 +1,7 @@
 require('dotenv').config();
-const app = require('./main');
-
 const mongoose = require('mongoose');
-
+const app = require('./main');
 const DB = process.env.DB;
-
 const PORT = process.env.PORT || 8000;
 
 mongoose.connect(DB).then(() => console.log('DB successfully connected✅'));

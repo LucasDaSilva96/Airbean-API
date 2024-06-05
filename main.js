@@ -20,7 +20,7 @@ app.options('*', cors());
 
 app.use('/api', menuRoute);
 app.use('/api', orderRoute);
-app.use('/api', userRoute);
 app.use('/api', aboutRoute);
+app.use('/api', userRoute);
 
 module.exports = app;
