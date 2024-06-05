@@ -34,10 +34,7 @@ exports.createNewOrder = async (req, res, next) => {
         user_ref,
       });
 
-      user.orders.push({
-        order_items,
-        user_ref,
-      });
+      user.orders.push(newOrder);
 
       await user.save();
 
