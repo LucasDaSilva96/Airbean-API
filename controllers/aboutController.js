@@ -1,5 +1,6 @@
 const aboutJSON = require('../data/about.json');
 
+// gets about page data
 exports.sendAboutInfo = async (req, res, next) => {
   try {
     res.status(200).json({

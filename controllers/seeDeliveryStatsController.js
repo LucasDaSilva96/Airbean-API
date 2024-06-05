@@ -1,5 +1,6 @@
 const { OrderModel } = require('../models/orderModel');
 
+//fetches order record from the database
 exports.getDeliveryInformation = async (req, res, next) => {
   try {
     const { orderID } = req.params;

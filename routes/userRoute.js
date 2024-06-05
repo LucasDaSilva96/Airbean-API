@@ -1,13 +1,14 @@
 const express = require('express');
 const { createNewUser } = require('../controllers/createAccountController');
-const { logInUser } = require('../controllers/logInController'); // Importera logInUser-funktionen
+const { logInUser } = require('../controllers/logInController'); 
 
 const router = express.Router();
 
-// Skapar en ny användare genom en POST-förfrågan till /signUp
+// Creates a new user through a POST-request to /signup
 router.post('/users/signUp', createNewUser);
 
-// Logga in användaren genom en POST-förfrågan till /login
+// Logs in the user by doing a POST-request to /login
 router.post('/users/login', logInUser);
 
 module.exports = router;
+

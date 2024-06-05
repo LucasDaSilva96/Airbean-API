@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const { MenuSchema } = require('./menuModel');
 const { addMinutesToDate } = require('../utils/addMinutesToDate');
 
-// Skapar ett schema för order
+// Creates a schema for order
 const OrderSchema = new mongoose.Schema({
-  order_items: [MenuSchema], // Produkterna i ordern
+  order_items: [MenuSchema], // Order products
   time: {
     type: Date,
     default: addMinutesToDate(),
   },
   user_ref: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user', // Referens till användaren som gjorde ordern
+    ref: 'user', // Ref to user that created the order
   },
   deliveryStatus: {
     type: String,
@@ -19,7 +19,7 @@ const OrderSchema = new mongoose.Schema({
   },
 });
 
-// Skapar en modell för order baserat på orderschemat
+// Creates a model for Order based on the order Schema
 const OrderModel = mongoose.model('order', OrderSchema);
 
 module.exports = {

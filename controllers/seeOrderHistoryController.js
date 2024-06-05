@@ -1,20 +1,22 @@
 const { UserModel } = require('../models/userModel');
 
+//Fetching order history for a given user ID
 exports.getOrderHistory = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params; 
     if (!id) throw new Error('No user id provided');
 
     const user = await UserModel.findById(id);
     if (!user) throw new Error('No user found with the provided id');
 
     let totalOrdersAmount = 0;
-
+    //calculates the total price of all orders.
     user.orders.forEach((order) => {
       order.order_items.forEach((item) => {
         totalOrdersAmount += item.price;
       });
     });
+    //Returns orders and the total amount spent
     res.status(200).json({
       status: 'success',
       message: 'User order history successfully fetched',

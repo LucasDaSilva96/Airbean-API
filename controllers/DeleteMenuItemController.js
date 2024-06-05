@@ -1,5 +1,6 @@
 const { MenuModel } = require('../models/menuModel');
 
+// Find item by ID and delete it
 exports.deleteMenuItem = async (req, res, next) => {
   try {
     const itemID = req.params.itemID;

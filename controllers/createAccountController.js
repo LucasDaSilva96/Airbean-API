@@ -2,26 +2,26 @@ const { UserModel } = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
 
-// Skapar en ny användare
+// Creates a new user
 exports.createNewUser = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
-    // Validerar e-postadressen
+    // Validates email
     if (!validator.isEmail(email)) {
       throw new Error('Invalid email address');
     }
 
-    // Kontrollerar om e-postadressen redan används
+    // Checks if email is already in use
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
       throw new Error('Email address is already in use');
     }
 
-    // Hashar lösenordet innan det sparas i databasen
+    // Hashes the password before storing it in database
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Skapar en ny användare i databasen
+    // Creates a new user in database
     await UserModel.create({ name, email, password: hashedPassword });
 
     res.status(201).json({

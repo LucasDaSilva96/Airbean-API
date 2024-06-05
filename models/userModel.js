@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 const { OrderSchema } = require('./orderModel');
 
-// Skapar ett schema för användare
+// Creates a Schema for users.
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide a name'], // Namnet är obligatoriskt
+    required: [true, 'Please provide a name'], 
   },
   email: {
     type: String,
-    required: [true, 'Please provide email'], // E-postadressen är obligatorisk
-    unique: true, // Unik e-postadress för varje användare
+    required: [true, 'Please provide email'], 
+    unique: true, // Every user must have unique Email 
   },
   password: {
     type: String,
-    required: [true, 'Please provide password'], // Lösenordet är obligatoriskt
+    required: [true, 'Please provide password'], 
   },
-  orders: [OrderSchema], // Användarens orderhistorik
+  orders: [OrderSchema], // Users Order history
 });
 
-// Skapar en modell för användare baserat på användarschemat
+// Creates a model for Users based on the User Schema.
 const UserModel = mongoose.model('user', UserSchema);
 
 module.exports = {

@@ -1,5 +1,6 @@
 const { MenuModel } = require('../models/menuModel');
 
+// Create new item on menu
 exports.createMenuItem = async (req, res, next) => {
   try {
     await MenuModel.create({ ...req.body, image: req.body.image || null });

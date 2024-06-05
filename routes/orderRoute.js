@@ -5,10 +5,12 @@ const {
 const { getOrderHistory } = require('../controllers/seeOrderHistoryController');
 const express = require('express');
 const { updateOrderStatus } = require('../controllers/updateOrderStatus');
+
 const router = express.Router();
 
-router.post('/order', createNewOrder);
+// Routing for orders
 
+router.post('/order', createNewOrder);
 router.get('/deliveryStats/:orderID', getDeliveryInformation);
 router.get('/orderHistory/:id', getOrderHistory);
 router.patch('/deliveryStats/:orderID/:userID', updateOrderStatus);

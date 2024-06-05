@@ -6,7 +6,7 @@ exports.createNewOrder = async (req, res, next) => {
   try {
     const { order_items, user_ref } = req.body;
 
-    //Validates that the order items exist in the menu by matching their IDs
+    //Matches item in menu with item in Order
     const menuItems = await MenuModel.find();
 
     let notFound = false;
@@ -24,7 +24,7 @@ exports.createNewOrder = async (req, res, next) => {
       throw new Error('Menu item not Found');
     }
 
-    if (user_ref) {
+    if (user_ref) { //if user is logged in
       const user = await UserModel.findById(user_ref);
 
       if (!user) throw new Error('The user was not found');
@@ -43,7 +43,7 @@ exports.createNewOrder = async (req, res, next) => {
         message: 'New order successfully created',
         data: newOrder,
       });
-    } else {
+    } else { //if user is guest
       // create new order
       const newOrder = await OrderModel.create({
         order_items,

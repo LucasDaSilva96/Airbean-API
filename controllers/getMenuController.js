@@ -1,5 +1,5 @@
 const { MenuModel } = require('../models/menuModel');
-
+// Get menu
 exports.getMenu = async (req, res, next) => {
   try {
     const menu = await MenuModel.find();
