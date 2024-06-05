@@ -9,6 +9,14 @@ Welcome to the Airbean API project! This is a project involving creating a backe
 -   [Technologies Used](#technologies-used)
 -   [Authors](#authors)
 
+## Features
+
+-   **User Authentication:** Sign up, log in, and manage user profiles.
+-   **Coffee Menu Management:** View and manage the coffee menu.
+-   **Order Processing:** Place and manage coffee orders.
+-   **Order Tracking:** Track the status of coffee orders in real-time.
+
+
 ## Installation
 To set up the project locally, follow these steps:
 
@@ -29,14 +37,7 @@ To set up the project locally, follow these steps:
     
 The server should now be running on `http://localhost:8000`.
 
-## Features
 
--   **User Authentication:** Sign up, log in, and manage user profiles.
--   **Coffee Menu Management:** View and manage the coffee menu.
--   **Order Processing:** Place and manage coffee orders.
--   **Order Tracking:** Track the status of coffee orders in real-time.
-
-  
 
 ## API-ENDPOINTS:
 
