@@ -6,7 +6,7 @@ exports.createNewOrder = async (req, res, next) => {
   try {
     const { order_items, user_ref } = req.body;
 
-    //Validates that the order items exist in the menu by matching their IDs
+   //loops through requested order items and checks if they exist on the menu
     const menuItems = await MenuModel.find();
 
     let notFound = false;
