@@ -1,9 +1,11 @@
 const { createMenuItem } = require('../controllers/createMenuItemController');
 const { deleteMenuItem } = require('../controllers/DeleteMenuItemController');
+const { getMenu } = require('../controllers/getMenuController');
 const express = require('express');
 
 const router = express.Router();
 
+router.get('/menu', getMenu);
 router.post('/menu', createMenuItem);
 router.delete('/menu/:itemID', deleteMenuItem);
 
