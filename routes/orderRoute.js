@@ -1,7 +1,5 @@
 const { createNewOrder } = require('../controllers/createOrderController');
-const {
-  getDeliveryInformation,
-} = require('../controllers/seeDeliveryStatsController');
+const { getDeliveryInformation } = require('../controllers/seeDeliveryStatsController');
 const { getOrderHistory } = require('../controllers/seeOrderHistoryController');
 const express = require('express');
 const router = express.Router();

@@ -13,6 +13,10 @@ const OrderSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user', // Referens till användaren som gjorde ordern
   },
+  deliveryStatus: {
+    type: String,
+    default: 'Pending',
+  },
 });
 
 // Skapar en modell för order baserat på orderschemat
