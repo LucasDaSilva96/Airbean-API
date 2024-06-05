@@ -14,7 +14,7 @@ Welcome to the Airbean API project! This is a project involving creating a backe
 -   **User Authentication:** Sign up, log in, and manage user profiles.
 -   **Coffee Menu Management:** View and manage the coffee menu.
 -   **Order Processing:** Place and manage coffee orders.
--   **Order Tracking:** Track the status of coffee orders in real-time.
+-   **Order Tracking:** Track the status of coffee orders.
 
 
 ## Installation
