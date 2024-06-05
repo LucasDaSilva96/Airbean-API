@@ -14,10 +14,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide password'],
   },
-  orders: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'order'
-  }],
+  orders: [OrderSchema],
 });
 
 const UserModel = mongoose.model('user', UserSchema);
