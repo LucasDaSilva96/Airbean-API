@@ -82,5 +82,5 @@ The server should now be running on `http://localhost:8000`.
 [LucasDaSilva96 (Lucas Da Silva) (github.com)](https://github.com/LucasDaSilva96),
 [SanJuan99 (Johan Berg Ekvall) (github.com)](https://github.com/SanJuan99),
 [W-nn-e (Winnie) (github.com)](https://github.com/W-nn-e),
-[Loushymooshy (github.com)](https://github.com/Loushymooshy)
+[Loushymooshy (github.com)](https://github.com/Loushymooshy),
 [philipalgebrink (Philip Älgebrink) (github.com)](https://github.com/philipalgebrink)
