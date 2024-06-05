@@ -3,25 +3,37 @@ const { MenuModel } = require('../models/menuModel');
 
 exports.createNewOrder = async (req, res, next) => {
   try {
+
     const orderItems = req.body.order_items;
+    const userRef = req.body.user_ref;
+
 
     //Validates that the order items exist in the menu by matching their IDs
-    const menuItems = await MenuModel.find({
-      '_id': { $in: orderItems.map(item => item._id) }
-    });
+    const menuItems = await MenuModel.find();
 
+    let notFound = false 
+    for( 
+      const item of orderItems 
+    ){
+      for( 
+        const menuitem of menuItems
+      ){ 
+        if (item.title === menuitem.title) return notFound = false
+        if (item.title !== menuitem.title) return notFound = true
+      }
+     }
+    
     //If above fails, you get the appropriate error message.
-    if (menuItems.length !== orderItems.length) {
-      return res.status(400).json({
-        status: 'fail',
-        message: 'Some menu items do not exist'
-      });
+    if (notFound) {
+     throw new Error("Menu not Found")
     }
     //create new order
     const newOrder = await OrderModel.create({
       order_items: orderItems,
-      user_ref:req.body.user.ref
+      user_ref: userRef,
     });
+
+    console.log('New Order Created:', newOrder);
 
     res.status(201).json({
       status: 'success',

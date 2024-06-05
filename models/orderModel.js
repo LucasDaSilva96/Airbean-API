@@ -11,6 +11,7 @@ const OrderSchema = new mongoose.Schema({
   user_ref: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
+    required: true,
   },
   deliveryStatus: {
     type: String,
