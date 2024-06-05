@@ -59,7 +59,7 @@ The server should now be running on `http://localhost:8000`.
 
 - **See delivery stats:** https://localhost:8000/api/deliveryStats/:orderID (GET)
 
-- **Update delivery stats:** https://localhost:8000/api/deliveryStats/:orderID/? :userID (GET)
+- **Update delivery stats:** https://localhost:8000/api/deliveryStats/:orderID/?:userID (GET)
 
 - **About:** https://localhost:8000/api/about (GET)
 
