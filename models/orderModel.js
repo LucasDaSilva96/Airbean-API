@@ -1,28 +1,25 @@
 const mongoose = require('mongoose');
-const dayjs = require('dayjs');
-const duration = require('dayjs/plugin/duration');
-const utc = require('dayjs/plugin/utc');
-const localeData = require('dayjs/plugin/localeData');
-dayjs.extend(localeData);
-dayjs.extend(duration);
-dayjs.extend(utc);
-
 const { MenuSchema } = require('./menuModel');
+const { addMinutesToDate } = require('../utils/addMinutesToDate');
 
+// Skapar ett schema för order
 const OrderSchema = new mongoose.Schema({
-  order_items: [MenuSchema],
+  order_items: [MenuSchema], // Produkterna i ordern
   time: {
     type: Date,
-    default: dayjs()
-      .add(dayjs.duration({ minutes: 15 }))
-      .toISOString(),
+    default: addMinutesToDate(),
   },
   user_ref: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user',
+    ref: 'user', // Referens till användaren som gjorde ordern
+  },
+  deliveryStatus: {
+    type: String,
+    default: 'Pending',
   },
 });
 
+// Skapar en modell för order baserat på orderschemat
 const OrderModel = mongoose.model('order', OrderSchema);
 
 module.exports = {

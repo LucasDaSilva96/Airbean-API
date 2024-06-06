@@ -1,12 +1,22 @@
 const { MenuModel } = require('../models/menuModel');
 
-const getMenu = async (req, res) => {
-    try {
-        const menuItems = await MenuModel.find({});
-        res.status(200).json(menuItems);
-    } catch (error) {
-        res.status(500).json({ message: 'Error fetching menu items', error });
-    }
-};
+exports.getMenu = async (req, res, next) => {
+  try {
+    const menu = await MenuModel.find();
 
-module.exports = { getMenu };
+    if (!menu) {
+      throw new Error('No items found in the menu');
+    }
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Menu successfully fetched',
+      data: menu,
+    });
+  } catch (e) {
+    res.status(400).json({
+      status: 'fail',
+      message: e.message,
+    });
+  }
+};
